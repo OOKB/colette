@@ -49,6 +49,7 @@ a button {
   padding: .4em 1em .3em;
   line-height: 1.5em;
   margin-top: 2em;
+  transition: all 400ms;
 }
 
 .border-btn:hover {
