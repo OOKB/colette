@@ -4,6 +4,7 @@ html {
   background-position: bottom center;
   background-size: 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -13,20 +14,43 @@ html {
 body {
   font-family: 'Garamond Premier Pro', 'Adobe Garamond', garamond, times, serif;
   font-size: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  max-width: 45em;
+  max-width: 30em;
   margin-left: auto;
   margin-right: auto;
+  padding: 2em 2em 6em;
+  margin-bottom: 10rem;
 }
+
+@media (min-width: 600px) {
+  .container {
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 0 1em 0 rgba(099,124,107,.5);
+    padding: 3em 3em 7rem;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+  }
+}
+
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.mt2          { margin-top:    2rem; }
+
+.mb2          { margin-bottom: 2rem; }
 
 h1 {
   font-size: 1.25em;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: .333333em;
-  margin-top: 3em;
 }
 
 address, p {
@@ -40,9 +64,8 @@ a button {
 }
 
 /* does this work?*/
-
 .border-btn {
-  background: transparent;
+  background: white;
   border: 2px solid rgba(099,124,107,1);
   border-radius: 4px;
   color: rgba(099,124,107,1);
@@ -54,7 +77,30 @@ a button {
   transition: all 400ms;
 }
 
+@media (max-width: 600px) {
+  .border-btn { width: 100%; display: inline-block; }
+}
+
 .border-btn:hover {
   border-color: darkgray;
   color: darkgray;
+}
+
+.image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 600px) {
+  .image-wrap {
+    box-shadow: 0 0 1em 0 rgba(099,124,107,.5);
+    border-radius: .5em;
+    overflow: hidden;
+    width: 150%;
+    margin-left: -25%;
+  }
+  .image-wrap img {
+    width: 50%;
+    float: left;
+  }
 }
