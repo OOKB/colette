@@ -63,6 +63,10 @@ a button {
   cursor: pointer;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* does this work?*/
 .border-btn {
   background: white;
