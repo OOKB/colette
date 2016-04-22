@@ -28,16 +28,22 @@ body {
 }
 
 .container {
+  background-color: white;
   max-width: 30em;
   margin-left: auto;
   margin-right: auto;
   padding: 2em 2em 6em;
-  margin-bottom: 10rem;
+  margin-bottom: 20rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 600px) {
   .container {
-    background: rgba(255,255,255,.95);
+    /*background: wheat;*/
     box-shadow: 0 0 1em 0 rgba(099,124,107,.5);
     padding: 3em 3em 7rem;
     border-bottom-left-radius: 1em;
@@ -89,8 +95,21 @@ body {
 .b1             { border: 1px solid; }
 .b2             { border: 2px solid; }
 
+.bt1            { border-top: 1px solid; }
+.bt2            { border-top: 2px solid; }
 .bt3            { border-top: 3px solid; }
+
+.br1            { border-right: 1px solid; }
+.br2            { border-right: 2px solid; }
+.br3            { border-right: 3px solid; }
+
+.bb1            { border-bottom: 1px solid; }
+.bb2            { border-bottom: 2px solid; }
 .bb3            { border-bottom: 3px solid; }
+
+.bl1            { border-left: 1px solid; }
+.bl2            { border-left: 2px solid; }
+.bl3            { border-left: 3px solid; }
 
 /** positioning **/
 .static   { position: static; }
@@ -125,20 +144,12 @@ a.no-style:hover {
 .invisible      { visibility: hidden; } /* doesn't show up, but does still live in the DOM */
 
 .visible-lg,
-.visible-60em,
 .hidden-sm {
   display: none;
   visibility: hidden;
 }
 
-@media (min-width: 60rem) {
-  .visible-60em {
-    display: block;
-    visibility: visible;
-  }
-}
-
-@media (min-width: 75rem) {
+@media (min-width: 50rem) {
   .visible-lg,
   .hidden-sm {
     display: block;
@@ -190,6 +201,18 @@ a button {
   text-align: center;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.lead.uppercase.italic {
+  letter-spacing: .4em;
+}
+
 /* does this work?*/
 .border-btn {
   background: white;
@@ -199,8 +222,6 @@ a button {
   font-size: 1.5rem;
   font-family: 'Garamond Premier Pro', 'Adobe Garamond', garamond, times, serif;
   padding: .4em 1em .3em;
-  line-height: 1.5em;
-  margin-top: 2em;
   transition: all 400ms;
 }
 
@@ -233,10 +254,16 @@ a button {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 50rem) {
+  .container {
+    max-width: 75rem;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
   .group {
-    margin-left: -.75em;
-    margin-right: -.75em;
+    margin-left: -.75rem;
+    margin-right: -.75rem;
   }
   .group::after {
     clear: both;
@@ -279,4 +306,10 @@ a button {
   .offset-by-eleven      { margin-left: calc(100% / 12 * 11); }
   .offset-by-twelve      { margin-left: calc(100% / 12 * 12); }
 
+}
+
+.menu .border-btn {
+  width: 100%;
+  line-height: 1;
+  height: 3em;
 }
